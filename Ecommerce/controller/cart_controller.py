@@ -19,16 +19,16 @@ class CartController:
                 quantity
             )
 
-            print("✅ Added to cart.")
+            print(" Added to cart.")
 
         except ValueError as e:
-            print(f"❌ Invalid input: {e}")
+            print(f" Invalid input: {e}")
 
         except RuntimeError as e:
-            print(f"❌ System error: {e}")
+            print(f" System error: {e}")
 
         except Exception as e:
-            print(f"❌ Unexpected error: {e}")
+            print(f" Unexpected error: {e}")
 
 
     def view_cart(self):
@@ -38,7 +38,7 @@ class CartController:
             )
 
             if not items:
-                print("🛒 Your cart is empty.")
+                print("Your cart is empty.")
                 return
 
             print(
@@ -65,10 +65,10 @@ class CartController:
             print(f"\n{'TOTAL':>43} ₹{total:>9.2f}")
 
         except RuntimeError as e:
-            print(f"❌ Could not load cart: {e}")
+            print(f" Could not load cart: {e}")
 
         except Exception as e:
-            print(f"❌ Unexpected error: {e}")
+            print(f" Unexpected error: {e}")
 
 
     def update_quantity(self):
@@ -82,16 +82,16 @@ class CartController:
                 quantity
             )
 
-            print("✅ Cart updated.")
+            print(" Cart updated.")
 
         except ValueError as e:
-            print(f"❌ Invalid input: {e}")
+            print(f" Invalid input: {e}")
 
         except RuntimeError as e:
-            print(f"❌ System error: {e}")
+            print(f" System error: {e}")
 
         except Exception as e:
-            print(f"❌ Unexpected error: {e}")
+            print(f" Unexpected error: {e}")
 
 
     def remove_from_cart(self):
@@ -105,15 +105,15 @@ class CartController:
                 product_id
             )
 
-            print("✅ Item removed from cart.")
+            print(" Item removed from cart.")
 
         except ValueError:
             print(
-                "❌ Please enter a valid product ID (number)."
+                " Please enter a valid product ID (number)."
             )
 
         except RuntimeError as e:
-            print(f"❌ System error: {e}")
+            print(f" System error: {e}")
 
         except Exception as e:
-            print(f"❌ Unexpected error: {e}")
+            print(f" Unexpected error: {e}")

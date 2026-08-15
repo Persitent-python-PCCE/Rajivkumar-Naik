@@ -165,7 +165,7 @@ def admin_menu(current_user):
 
         elif choice == "15":
             file_service.backup_orders_json()
-            print("✅ Orders backed up to logs/order_backup.json")
+            print("Orders backed up to logs/order_backup.json")
 
         elif choice == "16":
             print("Logged out.")

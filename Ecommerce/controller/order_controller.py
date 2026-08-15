@@ -16,7 +16,7 @@ class OrderController:
                 self.current_user.user_id
             )
 
-            print(f"\n✅ Order placed successfully!")
+            print(f"\n Order placed successfully!")
             print(f"Order ID: {order_id}")
             print(f"Total: ₹{total:.2f}")
             print("Your cart has been cleared.")
@@ -30,13 +30,13 @@ class OrderController:
             self.file_service.backup_orders_json()
 
         except ValueError as e:
-            print(f"❌ Could not place order: {e}")
+            print(f" Could not place order: {e}")
 
         except RuntimeError as e:
-            print(f"❌ System error: {e}")
+            print(f" System error: {e}")
 
         except Exception as e:
-            print(f"❌ Unexpected error: {e}")
+            print(f" Unexpected error: {e}")
 
 
     def view_order_history(self):
@@ -46,7 +46,7 @@ class OrderController:
             )
 
             if not orders:
-                print("📦 You have no orders yet.")
+                print("You have no orders yet.")
                 return
 
             print(
@@ -66,10 +66,10 @@ class OrderController:
                 )
 
         except RuntimeError as e:
-            print(f"❌ Could not load orders: {e}")
+            print(f" Could not load orders: {e}")
 
         except Exception as e:
-            print(f"❌ Unexpected error: {e}")
+            print(f" Unexpected error: {e}")
 
 
     def view_order_detail(self):
@@ -103,16 +103,16 @@ class OrderController:
             print(f"\n{'TOTAL':>46} ₹{float(order['total_amount']):>9.2f}")
 
         except ValueError as e:
-            print(f"❌ {e}")
+            print(f" {e}")
 
         except PermissionError as e:
-            print(f"❌ {e}")
+            print(f" {e}")
 
         except RuntimeError as e:
-            print(f"❌ System error: {e}")
+            print(f" System error: {e}")
 
         except Exception as e:
-            print(f"❌ Unexpected error: {e}")
+            print(f" Unexpected error: {e}")
 
 
     def cancel_order(self):
@@ -124,7 +124,7 @@ class OrderController:
                 self.current_user.user_id
             )
 
-            print("✅ Order cancelled and stock restored.")
+            print(" Order cancelled and stock restored.")
 
             self.file_service.write_log(
                 self.current_user.user_id,
@@ -133,13 +133,13 @@ class OrderController:
             )
 
         except ValueError as e:
-            print(f"❌ {e}")
+            print(f" {e}")
 
         except PermissionError as e:
-            print(f"❌ {e}")
+            print(f" {e}")
 
         except RuntimeError as e:
-            print(f"❌ System error: {e}")
+            print(f" System error: {e}")
 
         except Exception as e:
-            print(f"❌ Unexpected error: {e}")
+            print(f" Unexpected error: {e}")

@@ -53,7 +53,7 @@ class ProductController:
             max_price = float(max_input) if max_input else None
 
         except ValueError:
-            print("❌ Invalid price entered — ignoring price filter.")
+            print(" Invalid price entered — ignoring price filter.")
             min_price = None
             max_price = None
 
@@ -125,11 +125,11 @@ class ProductController:
                     print("Invalid choice.")
 
             except RuntimeError as e:
-                print(f"❌ {e}")
+                print(f" {e}")
                 return
 
             except Exception as e:
-                print(f"❌ Unexpected error: {e}")
+                print(f" Unexpected error: {e}")
                 return
 
     def get_product(self):

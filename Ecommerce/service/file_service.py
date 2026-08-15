@@ -30,13 +30,13 @@ class FileService:
                 ])
 
         except PermissionError as e:
-            print(f"⚠️  [Log] Permission denied writing log: {e}")
+            print(f"[Log] Permission denied writing log: {e}")
 
         except OSError as e:
-            print(f"⚠️  [Log] File system error writing log: {e}")
+            print(f"[Log] File system error writing log: {e}")
 
         except Exception as e:
-            print(f"⚠️  [Log] Unexpected error: {e}")
+            print(f"[Log] Unexpected error: {e}")
 
     def read_logs(self, filter_user_id=None):
         """Return list of log dicts. Returns empty list if file missing or unreadable."""
@@ -55,16 +55,16 @@ class FileService:
                         rows.append(row)
 
         except FileNotFoundError:
-            print("⚠️  [Log] activity_log.csv not found. No logs yet.")
+            print("[Log] activity_log.csv not found. No logs yet.")
 
         except PermissionError as e:
-            print(f"⚠️  [Log] Permission denied reading log: {e}")
+            print(f"[Log] Permission denied reading log: {e}")
 
         except csv.Error as e:
-            print(f"⚠️  [Log] CSV parse error: {e}")
+            print(f"[Log] CSV parse error: {e}")
 
         except Exception as e:
-            print(f"⚠️  [Log] Unexpected error reading log: {e}")
+            print(f"[Log] Unexpected error reading log: {e}")
 
         return rows
 
@@ -91,13 +91,13 @@ class FileService:
                 json.dump(backup, f, indent=4, default=str)
 
         except RuntimeError as e:
-            print(f"⚠️  [Backup] DB error during backup: {e}")
+            print(f"[Backup] DB error during backup: {e}")
 
         except PermissionError as e:
-            print(f"⚠️  [Backup] Permission denied writing backup: {e}")
+            print(f"[Backup] Permission denied writing backup: {e}")
 
         except OSError as e:
-            print(f"⚠️  [Backup] File system error: {e}")
+            print(f"[Backup] File system error: {e}")
 
         except Exception as e:
-            print(f"⚠️  [Backup] Unexpected error: {e}")
+            print(f"[Backup] Unexpected error: {e}")
