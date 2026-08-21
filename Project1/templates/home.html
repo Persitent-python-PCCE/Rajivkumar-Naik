@@ -1,0 +1,11 @@
+﻿{% extends "base.html" %}
+{% block content %}
+<div class="card">
+    <h2>Welcome, {{ current_user.username }}!</h2>
+    <p style="margin-top:10px;color:#555;">
+        You are logged in as <strong>{{ current_user.role }}</strong>.
+        More features will be available in the next phases.
+    </p>
+    <a class="btn secondary" href="{{ url_for('auth.logout') }}" style="margin-top:20px;display:inline-block;">Logout</a>
+</div>
+{% endblock %}
